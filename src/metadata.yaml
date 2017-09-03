@@ -1,0 +1,24 @@
+
+---
+documentclass: infthesis
+institute: icsa
+logo: yes
+classoption: [phd, twoside]
+title: How I Did It
+author: Victor Frankenstein
+#graduationdate: 1851
+#submityear: 1851
+dedication: I would like to dedicate this work to Mary Shelley.
+acknowledgements: |
+  I would like to extend my gratitude to Percy Shelley.
+abstract: |
+  This is the first paragraph of the abstract.
+
+  This is the second paragraph of the abstract.
+toc: yes
+lot: yes
+lof: yes
+biblatex: yes
+biblio-title: References
+---
+
