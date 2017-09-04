@@ -9,14 +9,21 @@ branches:
   only:
     - master
 
+git:
+  submodules: false
+
 env:
   global:
     - PANDOC_DIR=${TRAVIS_BUILD_DIR}/deps/pandoc
     - PANDOC_BIN_DIR=${PANDOC_DIR}/usr/bin
-    - PANDOC_ARCHIVE=https://github.com/jgm/pandoc/releases/download/1.19.2.1/pandoc-1.19.2.1-1-amd64.deb
+    - PANDOC_ARCHIVE=pandoc-1.19.2.1-1-amd64.deb
+    - PANDOC_URL=https://github.com/jgm/pandoc/releases/download/1.19.2.1/${PANDOC_ARCHIVE}
 
 before_install:
-  - wget ${PANDOC_ARCHIVE} | ar p | tar zx -C ${PANDOC_DIR}
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  - git submodule update --init --recursive
+  - travis_retry wget ${PANDOC_ARCHIVE}
+  - ar p ${PANDOC_URL} | tar zx -C ${PANDOC_DIR}
   - export PATH=${PATH}:${PANDOC_BIN_DIR}
   - sudo add-apt-repository -y ppa:texlive-backports/ppa
   - sudo apt-get update -qq
