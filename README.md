@@ -1,4 +1,11 @@
 
 # University of Edinburgh Informatics thesis
 
-:wq
+## Introduction
+
+## Requirements
+
+## Installation
+
+## Credits
+
