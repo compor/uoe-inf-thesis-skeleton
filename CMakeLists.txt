@@ -39,6 +39,14 @@ file(TO_NATIVE_PATH ${TEXMFLOCAL_PATH2} TEXMFLOCAL_NPATH2)
 
 set(TEXMFLOCAL_PATH "${TEXMFLOCAL_NPATH1}:${TEXMFLOCAL_NPATH2}:")
 
+set(EXPORTS_SCRIPT "exports.sh")
+
+configure_file(
+  "${CMAKE_SOURCE_DIR}/utils/scripts/${EXPORTS_SCRIPT}.in" 
+  ${EXPORTS_SCRIPT} @ONLY)
+
+#
+
 set(SRC_DIR "src")
 set(STYLE_DIR "style")
 set(FIGURES_DIR "figures")
