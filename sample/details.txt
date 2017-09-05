@@ -1,0 +1,22 @@
+
+5ee30d270ac321972af8da10045a7e135db61afe
+
+---
+7f715687d84705a6396075ac33866bd704350fc8 cmake/cmake-pandocology (heads/master)
+439d5b0d8b3737212ef6e29a71aeb87c95abd37e cmake/inf-thesis-latex-cls (heads/master)
+
+---
+cmake version 3.6.1
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+
+---
+pandoc 1.19.2.1
+Compiled with pandoc-types 1.17.0.4, texmath 0.9, skylighting 0.1.1.4
+Default user data directory: /home/vasich/.pandoc
+Copyright (C) 2006-2016 John MacFarlane
+Web:  http://pandoc.org
+This is free software; see the source for copying conditions.
+There is no warranty, not even for merchantability or fitness
+for a particular purpose.
+
