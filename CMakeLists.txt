@@ -5,10 +5,39 @@ cmake_minimum_required(VERSION 2.8)
 project(thesis NONE)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/cmake-pandocology/")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/inf-thesis-latex-cls/")
 
 include(pandocology)
+include(uoe-infthesis-latex-cls)
 
 #
+
+# set target names as var due to reuse
+set(SHIELD_TARGET "thesis-eushield")
+set(LATEX_CLASS_TARGET "thesis-class")
+
+
+add_uoe_eushield(TARGET ${SHIELD_TARGET})
+
+add_custom_command(TARGET ${SHIELD_TARGET}
+  POST_BUILD 
+  COMMAND texhash ${CMAKE_CURRENT_BINARY_DIR}/${SHIELD_TARGET})
+
+
+add_uoe_infthesis(TARGET ${LATEX_CLASS_TARGET})
+
+add_custom_command(TARGET ${LATEX_CLASS_TARGET}
+  POST_BUILD 
+  COMMAND texhash ${CMAKE_CURRENT_BINARY_DIR}/${LATEX_CLASS_TARGET})
+
+
+set(TEXMFLOCAL_PATH1 "${CMAKE_CURRENT_BINARY_DIR}/${SHIELD_TARGET}")
+set(TEXMFLOCAL_PATH2 "${CMAKE_CURRENT_BINARY_DIR}/${LATEX_CLASS_TARGET}")
+
+file(TO_NATIVE_PATH ${TEXMFLOCAL_PATH1} TEXMFLOCAL_NPATH1)
+file(TO_NATIVE_PATH ${TEXMFLOCAL_PATH2} TEXMFLOCAL_NPATH2)
+
+set(TEXMFLOCAL_PATH "${TEXMFLOCAL_NPATH1}:${TEXMFLOCAL_NPATH2}:")
 
 set(SRC_DIR "src")
 set(STYLE_DIR "style")
@@ -39,5 +68,6 @@ add_document(
   --csl=${CITATION_STYLE}
   --highlight-style pygments
   -N
-  --latex-engine=xelatex)
+  --latex-engine=xelatex
+  DEPENDS thesis-eushield thesis-class)
 
