@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+export TEXMFLOCAL=${TEXMFLOCAL}:${@TEXMFLOCAL_PATH@}
+
