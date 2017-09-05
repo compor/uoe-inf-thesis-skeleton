@@ -2,3 +2,7 @@
 	path = cmake/cmake-pandocology
 	url = git@github.com:compor/cmake-pandocology.git
 	branch = master
+[submodule "cmake/inf-thesis-latex-cls"]
+	path = cmake/inf-thesis-latex-cls
+	url = https://github.com/compor/inf-thesis-latex-cls.git
+	branch = master
