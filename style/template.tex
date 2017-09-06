@@ -122,6 +122,8 @@ $endif$
             citecolor=$if(citecolor)$$citecolor$$else$blue$endif$,
             urlcolor=$if(urlcolor)$$urlcolor$$else$blue$endif$,
             linkcolor=$if(linkcolor)$$linkcolor$$else$magenta$endif$,
+            $if(keywords)$pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},$endif$,
+            $if(tags)$pdfkeywords={$for(tags)$$tags$$sep$, $endfor$},$endif$,
             pdfborder={0 0 0}}
 \urlstyle{same}  % don't use monospace font for urls
 $if(links-as-notes)$
