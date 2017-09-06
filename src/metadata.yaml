@@ -6,15 +6,15 @@ logo: yes
 classoption: [phd, twoside]
 title: How I Did It
 author: Victor Frankenstein
+declaration: yes
 #graduationdate: 1851
 #submityear: 1851
 dedication: I would like to dedicate this work to Mary Shelley.
 acknowledgements: |
   I would like to extend my gratitude to Percy Shelley.
 abstract: |
-  This is the first paragraph of the abstract.
-
-  This is the second paragraph of the abstract.
+  This doctoral thesis will present the results of my work into the reanimation
+  of lifeless human tissues.
 toc: yes
 lot: yes
 lof: yes
