@@ -18,6 +18,7 @@ abstract: |
 toc: yes
 lot: yes
 lof: yes
+acronyms: yes
 biblatex: yes
 biblio-title: References
 tags: [thesis, biology]

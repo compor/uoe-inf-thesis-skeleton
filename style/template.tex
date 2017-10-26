@@ -23,14 +23,15 @@ $endif$
 % TP: hack to truncate list of figures/tables.
 \usepackage{truncate}
 \usepackage{caption}
-\usepackage{tocloft}
+\usepackage[titles]{tocloft}
 % TP: end hack
 
 $if(linestretch)$
 \usepackage{setspace}
 \setstretch{$linestretch$}
 $endif$
-\usepackage{amssymb,amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
@@ -155,6 +156,13 @@ $if(lang)$
 \fi
 $endif$
 
+$if(acronyms)$
+\usepackage[printonlyused,withpage]{acronym}
+
+\newcommand{\listacronymname}{List of Acronyms}
+\newlistof{acronyms}{acroentry}{\listacronymname}
+$endif$
+
 $if(title)$
 \title{$title$$if(subtitle)$\\\vspace{0.5em}{\large $subtitle$}$endif$}
 $endif$
@@ -222,6 +230,9 @@ $endif$
 $if(lof)$
 \listoffigures
 \newpage
+$endif$
+$if(acronyms)$
+\listofacronyms
 $endif$
 $body$
 
