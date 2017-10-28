@@ -74,6 +74,7 @@ add_document(
   --template=${TEMPLATE}
   --bibliography=${BIBLIOGRAPHY}
   --csl=${CITATION_STYLE}
+  --filter pandoc-citeproc
   --highlight-style pygments
   -N
   --latex-engine=xelatex
